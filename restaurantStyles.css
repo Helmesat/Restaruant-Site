@@ -1,0 +1,48 @@
+header, footer{
+    background-color: #6a97ca; color: ivory;
+    height: 150;
+    text-align: center;
+    padding: 20px 10px 20px 10px;
+    font-family: sans-serif;
+    }
+header{
+    font-size: 1.5em;
+    }
+footer{
+    font-size: 1.2em;
+}
+.discription{
+    margin: auto;
+    text-align: justify;
+    width: 25em;
+}
+nav{
+    
+    margin-top: 20px;
+}
+
+ nav a{
+    background-color: chartreuse;
+    padding: 6px;
+    border: thin solid #0d1f2d;
+    text-align: center;
+    display: inline; 
+    margin: 15px;
+    width: 100px;
+    text-decoration: underline;
+}
+
+nav a:hover{
+    font-weight: bold;
+}
+nav a :visited{ 
+    color: aqua;
+}
+nav a :active{
+    text-decoration-line: unset;
+}
+
+
+ 
+ 
+    
