@@ -6,37 +6,24 @@
     <title> Contact Us</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="restaurantStyles.css" type="text/css"/>
+    <script src="form.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
+   
     <style>
       
       .contact{
         text-align: center;
         margin: auto;
       }
-      .input{
+      .contactInfo {
+        text-align: center;
         padding: 20px;
-       }
-      .options{
-          padding: 20px;
-        }
+      }
+        
        .clear-float{
          clear: both;
        }
-        .info{
-        padding: 20px;
-        
-      }
-    
-      .visit{
-        padding: 20px;
-      }
-      .days{
-        padding: 20px;
-      }
-      .press{
-       padding:  20px;
-      }
+
       
  </style>
  
@@ -58,86 +45,76 @@
 
       <div class="contact">
        
-           <form class="needs-validation" action=" Send-Request.html" method="POST" novalidate> 
+           <orm  name= "form" onsubmit="return validateForm()"> 
                  <div class="col-lg-12"> 
                  
-                            
-                         <label for="validationCustom01"><strong>Name:</strong></label>
-                          <input type="text"  id=" Name" name="Name" placeholder="Name" required>
-                            <div class="valid-feedback">
-                              please provide your name.
-                            </div>
+                            <div class="contactInfo">
+                         
+                              <label><strong>Name:</strong></label>
+                                      <input type="text"  id=" name" name="name" placeholder="name">
+                                        <div class="validFeedback" id="nameValidFeedback"> </div>
+                           </div>
                                <br/><br>
-                        <label for="validationCustom01"> <strong> Email:</strong></label>
-                         <input type="text" id="Email" name="Email" placeholder="Email" required>
-                            <div class="valid-feedback">
-                              please provide your Email.
+
+                            <div class="contactInfo">
+                               <label> <strong>Email:</strong></label>
+                                      <input type="text" id="email" name="email" placeholder="email" >
+                                        <div class="validFeedback"id="emailValidFeedback"> </div>
                             </div>
                                 <br/><br>
-                       <label for="validationCustom01"> <strong> Phone:</strong></label>
-                         <input type="text"  id= "Phone" name="Phone"placeholder="Phone" required> 
-                            <div class="valid-feedback">
-                              please provide your phone.
+
+                            <div class="contactInfo">
+                                <label> <strong>Phone:</strong></label>
+                                      <input type="text"  id= "phone" name="phone"placeholder="phone" > 
+                                         <div class="validFeedback"id="phoneValidFeedback"></div>
                             </div>
                                <br/><br>
-                            </div>
-
+                     </div>
             
                
-                          <div class="options">
+                     <div class="contactInfo">
                             
                             <strong>Reason For Inquiry:</strong> 
-                             <select name="Reason For Inquiry" id="Reason For Inquiry">
-                             <br/>
-                             <option value="default"selected>Catering</option>
-                             <option value="privat party "> Private party</option>
-                             <option value=" feedback"> Feedback </option>
-                             <option value="other"> Other </option>
-                     
-                          </select>
-                          <div class="invalid-feedback">
-                            Please select a valid reason.
-                          </div>
+                            
+                            <select name="Reason For Inquiry" id="reasonForInquiry">  <br/>
+                                <option value="default"selected>Catering</option>
+                                <option value="privat party "> Private party</option>
+                                <option value=" feedback"> Feedback </option>
+                                <option value="other"> Other </option>
+                            </select>
+                          <div class="validFeedback" id="reasonForInquiryvalidFeedback"></div>
                            <br/> 
-                           </div>
+                      </div>
                            
-                           
-                         
-                              
-                          <div class="info">
-                            <strong>Additional information:</strong>
-                             <textarea name="Aditional information" id=" Aditional information" cols="30" rows="10"></textarea>
-                             
-                             </div>
+                      <div class="contactInfo">
+                          <strong>Additional information:</strong>
+                             <textarea name="Aditional information" id="aditionalInformation" cols="30" rows="10"></textarea>
+                             <div class="validFeedback"id="aditionalInformationValidFeedback"></div>
+                       </div>
                           
                             
-                          <div class="visit">
-                            
-                           <strong> Have you been to the Restaurant :</strong>
-                            <input  type="radio" id="choise 2" value="No" name="answer" checked required>
-                            <label for="choise 2"> No </label>
-                            <input type="radio" id="choise 1" value="yes" name="questionary"required>
-                            <label   for="choise 1">yes</label>
-                            <div class="invalid-feedback">choose one</div>
+                     <div class="contactInfo">
+                            <label><strong> Have you been to the Restaurant :</strong></label>
+                                <label for="choise2"><input  type="radio" id="visit" value="No" name="visit" checked>No</label>
+                                <label   for="choise1"><input type="radio" id="visti" value="yes" name="visit">yes</label>
                            
-                           
-                          </div>
+                               <div class="validFeedback" id="visitFeedback"></div>
+                     </div>
              
-                           <div class="days">
-                           
-                            <label for="customCheck"><strong> Best days to contact you:</strong> </label>
-                             <input type="checkbox" id="answer 1" value="M" unchecked /> M 
-                             <input type="checkbox" id="answer 2" value="T" unchecked/> T 
-                             <input type="checkbox" id="answer 3" value="W" unchecked/> W 
-                             <input type="checkbox" id="answer 4" value="TH" unchecked /> TH
-                             <input type="checkbox" id="answer 5" value="F" unchecked /> F <br/>
-                             
-                             <div  class="invalid-feedback"> </div>
-                             
-                           </div>
-                             <div class="press">
-                              <input type="submit" value="Send Request"> 
-                             </div>
+                     <div class="contactInfo">
+                            <label for="customCheck"><strong> Best days to contact you:</strong></label>
+                                 <input type="checkbox" id="day" value="M" unchecked /> M 
+                                 <input type="checkbox" id="day" value="T" unchecked/> T 
+                                 <input type="checkbox" id="day" value="W" unchecked/> W 
+                                 <input type="checkbox" id="day" value="TH" unchecked /> TH
+                                 <input type="checkbox" id="day" value="F" unchecked /> F <br/>
+                          
+                             <div  class="validFeedback" id="dayValidFeedback"> </div>
+                     </div>
+                         
+                     <div class="contactInfo">
+                              <input type="submit" value="Send Request"/> 
+                    </div>
                
                              
                         <hr/>
