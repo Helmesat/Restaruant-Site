@@ -1,4 +1,4 @@
-function printValidFeedback(Id,Msg){
+function printError(Id,Msg){
     document.getElementById(Id).innerHTML = Msg;
 }
 
@@ -13,23 +13,23 @@ function validateForm(){
     var day = document.Form.day.value;
     
     
-    var nameValidFeedback = emailValidFeedback = phoneValidFeedback = reasonForInquiryvalidFeedback = aditionalInformationValidFeedback = visitFeedback = dayValidFeedback = true;
+    var nameErr = emailErr = phoneErr = reasonForInquiryErr = aditionalInformationErr = visitErr = dayErr = true;
   
      if(name==""){
-         printValidFeedback("nameValidFeedback", "pleas enter your name");
+         printError("nameErr", "pleas enter your name");
          var elem = document.getElementById("name");
              elem.classList.add("input-2");
              elem.classList.remove("input-1");
      }else{
          var regex = / ^[ a-zA-Z\s]+$/;
          if(regex.test(name)===false){
-             printValidFeedback("nameValidFeedback", "pleas enter a valid name");
+             printError("nameErr", "pleas enter a valid name");
              var elem = document.getElementById("name");
              elem.classList.add("input-2");
              elem.classList.remove("input-1");
          }else{
-            printValidFeedback("nameValidFeedback", "");
-            nameValidFeedback = false;
+            printError("nameErr", "");
+            nameErr = false;
             var elem = document.getElementById("name");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
@@ -38,20 +38,20 @@ function validateForm(){
 
 
      if(email==""){
-        printValidFeedback("emailValidFeedback", "pleas enter your email address");
+        printError("emailErr", "pleas enter your email address");
         var elem = document.getElementById("email");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
     }else{
         var regex = / ^\s+@\s+\.\s+$/;
         if(regex.test(email)===false){
-            printValidFeedback("emailValidFeedback", "pleas enter a valid email address");
+            printError("emailErr", "pleas enter a valid email address");
             var elem = document.getElementById("email");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
         }else{
-           printValidFeedback("emailValidFeedback", "");
-           nameValidFeedback = false;
+           printError("emailErr", "");
+           nameErr = false;
            var elem = document.getElementById("email");
            elem.classList.add("input-2");
            elem.classList.remove("input-1");
@@ -59,20 +59,20 @@ function validateForm(){
     }
 
     if(phone==""){
-        printValidFeedback("phoneValidFeedback", "pleas enter your phone number");
+        printError("phoneErr", "pleas enter your phone number");
         var elem = document.getElementById("phone");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
     }else{
         var regex = / ^[1-9]\d{9}$/;
         if(regex.test(phone)===false){
-            printValidFeedback("phoneValidFeedback", "pleas enter a your phone number");
+            printError("phoneErr", "pleas enter a your phone number");
             var elem = document.getElementById("phone");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
         }else{
-           printValidFeedback("phoneValidFeedback", "");
-           nameValidFeedback = false;
+           printError("phoneErr", "");
+           nameErr = false;
            var elem = document.getElementById("phone");
            elem.classList.add("input-2");
            elem.classList.remove("input-1");
@@ -80,13 +80,13 @@ function validateForm(){
     }
 
     if(reasonForInquiry=="select"){
-        printValidFeedback("reasonForInquiryValidFeedback", "pleas select one reason");
+        printError("reasonForInquiryErr", "pleas select one reason");
         var elem = document.getElementById("reasonForInquiry");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
     }else{
-            printValidFeedback("reasonForInquiryValidFeedback", "");
-            reasonForInquiryValidFeedback = false;
+            printError("reasonForInquiry", "");
+            reasonForInquiryErr = false;
             var elem = document.getElementById("reasonForInquiry");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
@@ -94,19 +94,19 @@ function validateForm(){
         
     }
     if(aditionalInformation==""){
-        printValidFeedback("aditionalInformationValidFeedback", "pleas enter aditional information");
+        printError("aditionalInformationErr", "pleas enter aditional information");
         var elem = document.getElementById("aditionalInformation");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
     }else{
         var regex = / ^[ a-zA-Z\s]+$/;
         if(regex.test(aditionalInformation)===false){
-            printValidFeedback("aditionalInformation", "pleas enter aditional information");
+            printError("aditionalInformationErr", "pleas enter aditional information");
             var elem = document.getElementById("phone");
             elem.classList.add("input-2");
             elem.classList.remove("input-1");
         }else{
-           printValidFeedback("aditionalInformationValidFeedback", "");
+           printError("aditionalInformationErr", "");
            nameValidFeedback = false;
            var elem = document.getElementById("aditionalInformation");
            elem.classList.add("input-2");
@@ -114,31 +114,31 @@ function validateForm(){
         }
     }
 
-    if( visit=="select"){
-        printValidFeedback(" visitValidFeedback", "pleas select one ");
+    if( visit==""){
+        printError(" visitErr", "pleas select one ");
         var elem = document.getElementById("visit");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
     }else{
-            printValidFeedback(" visitValidFeedback", "");
-            visitValidFeedback = false;
+            printError("visitErr", "");
+            visitErr = false;
             var elem = document.getElementById("visit");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
        }
-     if(day=="select"){
-        printValidFeedback("dayValidFeedback", "pleas select one day ");
+     if(day==""){
+        printError("dayErr", "pleas select one day ");
         var elem = document.getElementById("day");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
     }else{
-            printValidFeedback("dayValidFeedback", "");
-            dayValidFeedback = false;
+            printError("dayErr", "");
+            dayErr = false;
             var elem = document.getElementById("day");
             elem.classList.add("input-4");
             elem.classList.remove("input-3");
        }
-       if((nameValidFeedback || emailValidFeedback || phoneValidFeedback || reasonForInquiryvalidFeedback || aditionalInformationValidFeedback || visitFeedback || dayValidFeedback )== true){
+       if((nameErr || emailErr || phoneErr || reasonForInquiryErr || aditionalInformationErr || visitErr || dayErr )== true){
            return false; 
        }
 };
